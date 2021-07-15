@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="chieudai">Nhập chiều dài : </label><br>
+<input type="text" id="chieudai"><br>
+<input type="button" value="check2" onclick="demofor()">
+<div id="ketqua"></div>
+<script>
+    function demofor() {
+        let text = "";
+        let chieudai = +document.getElementById("chieudai").value;
+        for (let i = 1; i <= chieudai; i++) {
+            for (let j = 1; j <= i; j++) {
+                text = text + "*";
+            }
+            text = text + "<br>";
+        }
+        //===========================================================================
+        for (let i = 0; i < 1; i++) {
+            text = text + "<br>";
+        }
+        //===========================================================================
+        for (let i = 1; i <= chieudai; i++) {
+            for (let j = 1; j <= chieudai - i + 1; j++) {
+                text = text + "*";
+            }
+            text = text + "<br>";
+        }
+        //===========================================================================
+        for (let i = 0; i < 1; i++) {
+            text = text + "<br>";
+        }
+        //===========================================================================
+        for (let i = 1; i <= chieudai; i++) {
+            for (let j = 1; j <= chieudai; j++) {
+                if (j > chieudai-i){
+                    text = text + "*";
+                }else {
+                    text = text + "&nbsp&nbsp";
+                }
+
+            }
+            text = text + "<br>";
+        }
+        //===========================================================================
+        for (let i = 0; i < 1; i++) {
+            text = text + "<br>";
+        }
+        //===========================================================================
+        for (let i = 1; i <= chieudai; i++) {
+            for (let j = 1; j <= chieudai; j++) {
+                if (j >= i){
+                    text = text + "*";
+                }else {
+                    text = text + "&nbsp&nbsp";
+                }
+            }
+            text = text + "<br>";
+        }
+        //===========================================================================
+
+        document.getElementById("ketqua").innerHTML = text;
+    }
+
+</script>
+</body>
+</html>

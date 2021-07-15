@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In dãy Finonaci</title>
+</head>
+<body>
+<label for="chieudai">Nhập chiều dài : </label><br>
+<input type="text" id="chieudai"><br>
+<label for="chieurong">Nhập chiều rộng</label><br>
+<input type="text" id="chieurong"><br>
+<input type="button" value="check" onclick="hcn()">
+<input type="button" value="check2" onclick="demofor()">
+<div id="ketqua"></div>
+<script>
+    function demofor(){
+        let text = "";
+        let chieudai = +document.getElementById("chieudai").value;
+        let chieurong = +document.getElementById("chieurong").value;
+        for (let i = 1; i <= chieudai; i++) {
+            for (let j = 1; j <= chieurong; j++) {
+                if (i==1 || j==1 ||j==chieurong ||i==chieudai){
+                    text = text+"*";
+                }
+                else {
+                    text = text+"&nbsp;&nbsp;";
+                }
+            }
+            text = text + "<br>";
+        }
+        document.getElementById("ketqua").innerHTML = text;
+    }
+    function hcn(){
+        let chieudai = +document.getElementById("chieudai").value;
+        let chieurong = +document.getElementById("chieurong").value;
+        let text = "";
+        for (let i = 1; i <= chieudai; i++) {
+            for (let j = 1; j <= chieurong; j++) {
+                if (i==1 || i==20|| j==0 || j==50){
+                    text = text +"*";
+                }else{
+                    text = text +"*";
+                }
+
+            }
+            text = text +"<br>";
+        }
+        document.getElementById("ketqua").innerHTML = text;
+    }
+
+</script>
+</body>
+</html>
